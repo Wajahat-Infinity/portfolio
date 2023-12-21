@@ -248,81 +248,9 @@ Home
                             <!-- <span class="value">85%</span> -->
                         </div>
                     </div>
-                    <!-- <div class="col-md-6">
-                      <div class="item">
-                        <div class="d-flex align-items-center mb-30">
-                          <div class="mr-30">
-                            <div class="img icon-img-40">
-                              <img src="{% static 'assets/imgs/resume/s4.png' %}" alt="" />
-                            </div>
-                          </div>
-                          <div>
-                            <h6 class="fz-18">WordPress</h6>
-                          </div>
-                        </div>
-                        <div class="skill-progress">
-                          <span class="progres" data-value="78%"></span>
-                        </div>
-                      </div>
-                    </div> -->
                 </div>
             </div>
         </div>
-        <!-- <div class="awards mt-100">
-          <div class="row md-marg">
-            <div class="col-lg-4">
-              <div class="award-item sub-bg md-mb30">
-                <div class="d-flex">
-                  <div>
-                    <span>01</span>
-                  </div>
-                  <div class="ml-auto">
-                    <span>2019</span>
-                  </div>
-                </div>
-                <div class="img icon-img-100 mt-80 mb-30">
-                  <img src="{% static 'assets/imgs/awards/1.png' %}" alt="" />
-                </div>
-                <h6>02x Designer Award</h6>
-                <span class="sub-title main-color mt-10">Nominee</span>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="award-item sub-bg md-mb30">
-                <div class="d-flex">
-                  <div>
-                    <span>01</span>
-                  </div>
-                  <div class="ml-auto">
-                    <span>2021</span>
-                  </div>
-                </div>
-                <div class="img icon-img-100 mt-80 mb-30">
-                  <img src="{% static 'assets/imgs/awards/2.png' %}" alt="" />
-                </div>
-                <h6>02x Designer Award</h6>
-                <span class="sub-title main-color mt-10">Winner</span>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="award-item sub-bg">
-                <div class="d-flex">
-                  <div>
-                    <span>01</span>
-                  </div>
-                  <div class="ml-auto">
-                    <span>2022</span>
-                  </div>
-                </div>
-                <div class="img icon-img-100 mt-80 mb-30">
-                  <img src="{% static 'assets/imgs/awards/3.png' %}" alt="" />
-                </div>
-                <h6>02x Designer Award</h6>
-                <span class="sub-title main-color mt-10">Ruuners Up</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
     </div>
 
     <!-- ==================== End Skills ==================== -->
@@ -332,6 +260,7 @@ Home
     <div class="sec-box portfolio section-padding" data-scroll-index="3">
         <div class="sec-head mb-30">
             <div class="row">
+
                 <div class="col-lg-6">
                     <h6 class="sub-title opacity-7 mb-15">Our Portfolio</h6>
                     <h3>
@@ -367,22 +296,25 @@ Home
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="gallery">
             <div class="row">
-                <div class="col-lg-6 items">
+
+                {% for project in projects %}
+                <div class="col-lg-4 items">
                     <div class="item mt-50">
                         <div class="img">
-                            <a href="project-details.html">
-                                <img src="{% static 'assets/imgs/works/5.jpg' %}" alt=""/>
+                            <a href="{% url 'project-details' project.id %}">
+                                <img src="{{project.image.url}}" alt=""/>
                             </a>
                         </div>
                         <div class="cont mt-30 d-flex align-items-center">
                             <div>
                                 <span class="tag">Photos</span>
                                 <h6 class="line-height-1">
-                                    <a href="project-details.html">My photoGraphy</a>
+                                    <a href="{% url 'project-details' project.id %}">{{project.name}}</a>
                                 </h6>
                             </div>
                             <div class="ml-auto">
@@ -413,305 +345,12 @@ Home
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 items">
-                    <div class="item mt-50">
-                        <div class="img">
-                            <a href="project-details.html">
-                                <img src="{% static 'assets/imgs/works/10.jpg' %}" alt=""/>
-                            </a>
-                        </div>
-                        <div class="cont mt-30 d-flex align-items-center">
-                            <div>
-                                <span class="tag">Websites</span>
-                                <h6 class="line-height-1">
-                                    <a href="project-details.html">Luxury Modern Website</a>
-                                </h6>
-                            </div>
-                            <div class="ml-auto">
-                                <div class="arrow">
-                                    <a href="project-details.html">
-                                        <svg
-                                                class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px"
-                                                y="0px"
-                                                viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve"
-                                                style="stroke-width: 2"
-                                        >
-                            <line x1="0" y1="16" x2="33" y2="16"></line>
-                                            <line x1="17.3" y1="0.7" x2="33.2" y2="16.5"></line>
-                                            <line
-                                                    x1="17.3"
-                                                    y1="31.6"
-                                                    x2="33.5"
-                                                    y2="15.4"
-                                            ></line>
-                          </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 items">
-                    <div class="item mt-50">
-                        <div class="img">
-                            <a href="project-details.html">
-                                <img src="{% static 'assets/imgs/works/8.jpg' %}" alt=""/>
-                            </a>
-                        </div>
-                        <div class="cont mt-30 d-flex align-items-center">
-                            <div>
-                                <span class="tag">Videos</span>
-                                <h6 class="line-height-1">
-                                    <a href="project-details.html">My Videos</a>
-                                </h6>
-                            </div>
-                            <div class="ml-auto">
-                                <div class="arrow">
-                                    <a href="project-details.html">
-                                        <svg
-                                                class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px"
-                                                y="0px"
-                                                viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve"
-                                                style="stroke-width: 2"
-                                        >
-                            <line x1="0" y1="16" x2="33" y2="16"></line>
-                                            <line x1="17.3" y1="0.7" x2="33.2" y2="16.5"></line>
-                                            <line
-                                                    x1="17.3"
-                                                    y1="31.6"
-                                                    x2="33.5"
-                                                    y2="15.4"
-                                            ></line>
-                          </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 items">
-                    <div class="item mt-50">
-                        <div class="img">
-                            <a href="project-details.html">
-                                <img src="{% static 'assets/imgs/works/11.jpg' %}" alt=""/>
-                            </a>
-                        </div>
-                        <div class="cont mt-30 d-flex align-items-center">
-                            <div>
-                                <span class="tag">Designs</span>
-                                <h6 class="line-height-1">
-                                    <a href="project-details.html">Graph Designs</a>
-                                </h6>
-                            </div>
-                            <div class="ml-auto">
-                                <div class="arrow">
-                                    <a href="project-details.html">
-                                        <svg
-                                                class="arrow-right"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                x="0px"
-                                                y="0px"
-                                                viewBox="0 0 34.2 32.3"
-                                                xml:space="preserve"
-                                                style="stroke-width: 2"
-                                        >
-                            <line x1="0" y1="16" x2="33" y2="16"></line>
-                                            <line x1="17.3" y1="0.7" x2="33.2" y2="16.5"></line>
-                                            <line
-                                                    x1="17.3"
-                                                    y1="31.6"
-                                                    x2="33.5"
-                                                    y2="15.4"
-                                            ></line>
-                          </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+
             </div>
         </div>
     </div>
 
-    <div class="sec-box price section-padding" data-scroll-index="4">
-        <div class="sec-head mb-80">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <h6 class="sub-title opacity-7 mb-15">Best Pricing</h6>
-                    <h3><span class="main-color">Flexible</span> Pricing Plan</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row md-marg">
-            <div class="col-lg-4 valign">
-                <div class="item full-width md-mb50">
-                    <div class="top-curv">
-                        <span class="left"></span>
-                        <h6 class="type">Basic</h6>
-                        <span class="right"></span>
-                    </div>
-
-                    <div class="content">
-                        <div
-                                class="amount d-flex align-items-end pb-50 mb-50 bord-thin-bottom"
-                        >
-                            <h2 class="main-color">$19</h2>
-                            <p class="ml-20 fz-20">/ hour</p>
-                        </div>
-                        <div class="feat">
-                            <!-- <ul class="rest">
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Need your wireframe</span>
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Design with Figma, Framer</span>
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span
-                                  >Implement with Webflow, React, WordPress,
-                                  Laravel/PHP</span
-                                >
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Support 6 months</span>
-                              </li>
-                            </ul> -->
-                        </div>
-                        <div class="text-center mt-50">
-                            <div class="butn-presv">
-                                <a
-                                        href="#0"
-                                        class="butn butn-md butn-bord radius-5 text-u full-width"
-                                >
-                                    <span>Get Started</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 valign">
-                <div class="item full-width md-mb50">
-                    <div class="top-curv">
-                        <span class="left"></span>
-                        <h6 class="type">Popular</h6>
-                        <span class="right"></span>
-                    </div>
-
-                    <div class="content">
-                        <div
-                                class="amount d-flex align-items-end pb-50 mb-50 bord-thin-bottom"
-                        >
-                            <h2 class="main-color">$39</h2>
-                            <p class="ml-20 fz-20">/ hour</p>
-                        </div>
-                        <div class="feat">
-                            <!-- <ul class="rest">
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Need your wireframe</span>
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Design with Figma, Framer</span>
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span
-                                  >Implement with Webflow, React, WordPress,
-                                  Laravel/PHP</span
-                                >
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Support 6 months</span>
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Your project alway be priority</span>
-                              </li>
-                            </ul> -->
-                        </div>
-                        <div class="text-center mt-50">
-                            <div class="butn-presv">
-                                <a
-                                        href="#0"
-                                        class="butn butn-md butn-bord radius-5 text-u full-width"
-                                >
-                                    <span>Get Started</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 valign">
-                <div class="item full-width">
-                    <div class="top-curv">
-                        <span class="left"></span>
-                        <h6 class="type">Premium</h6>
-                        <span class="right"></span>
-                    </div>
-
-                    <div class="content">
-                        <div
-                                class="amount d-flex align-items-end pb-50 mb-50 bord-thin-bottom"
-                        >
-                            <h2 class="main-color">$59</h2>
-                            <p class="ml-20 fz-20">/ hour</p>
-                        </div>
-                        <div class="feat">
-                            <!-- <ul class="rest">
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Need your wireframe</span>
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Design with Figma, Framer</span>
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span
-                                  >Implement with Webflow, React, WordPress,
-                                  Laravel/PHP</span
-                                >
-                              </li>
-                              <li>
-                                <i class="fas fa-check"></i>
-                                <span>Support 6 months</span>
-                              </li>
-                            </ul> -->
-                        </div>
-                        <div class="text-center mt-50">
-                            <div class="butn-presv">
-                                <a
-                                        href="#0"
-                                        class="butn butn-md butn-bord radius-5 text-u full-width"
-                                >
-                                    <span>Get Started</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ==================== End price ==================== -->
 
@@ -839,40 +478,15 @@ Home
                     <h6 class="sub-title opacity-7 mb-15">Our Blog</h6>
                     <h3>Latest News & <span class="main-color">Blog</span></h3>
                 </div>
-                <!-- <div class="col-lg-6 valign">
-                  <div class="go-more full-width d-flex justify-content-end">
-                    <a href="blogs.html" class="d-flex">
-                      <span
-                        >View All Posts
-                        <svg
-                          class="arrow-right"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                          x="0px"
-                          y="0px"
-                          viewBox="0 0 34.2 32.3"
-                          xml:space="preserve"
-                          style="stroke-width: 2"
-                        >
-                          <line x1="0" y1="16" x2="33" y2="16"></line>
-                          <line x1="17.3" y1="0.7" x2="33.2" y2="16.5"></line>
-                          <line
-                            x1="17.3"
-                            y1="31.6"
-                            x2="33.5"
-                            y2="15.4"
-                          ></line></svg
-                      ></span>
-                    </a>
-                  </div>
-                </div> -->
             </div>
         </div>
         <div class="row">
+
+            {% for blog in blogs %}
             <div class="col-lg-4">
                 <div class="item md-mb30">
                     <div class="img">
-                        <img src="{% static 'assets/imgs/blog/9.jpg' %}" alt=""/>
+                        <img src="{{blog.image.url}}" alt=""/>
                     </div>
                     <div class="box">
                         <div class="cont">
@@ -881,8 +495,8 @@ Home
                       Oct 2023</span
                     >
                             <h5>
-                                <a href="blog-details.html"
-                                >12 unique examples of websites .</a
+                                <a href="{% url 'blog-details' blog.id %}"
+                                >{{blog.title}}</a
                                 >
                             </h5>
                         </div>
@@ -914,92 +528,8 @@ Home
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="item md-mb30">
-                    <div class="img">
-                        <img src="{% static 'assets/imgs/blog/6.jpg' %}" alt=""/>
-                    </div>
-                    <div class="box">
-                        <div class="cont">
-                    <span class="date"
-                    ><i class="fas fa-calendar-alt mr-10 main-color"></i> 10 ,
-                      Oct 2023</span
-                    >
-                            <h5>
-                                <a href="blog-details.html">Abcdefgh.</a>
-                            </h5>
-                        </div>
-                        <div class="info d-flex align-items-center">
-                            <div>
-                      <span
-                      ><i class="fas fa-comments fz-12 mr-5"></i> 2
-                        Comments</span
-                      >
-                            </div>
-                            <!-- <div class="ml-auto">
-                              <a href="blog-details.html"
-                                >Read More
-                                <svg
-                                  class="ml-5"
-                                  width="18"
-                                  height="18"
-                                  viewBox="0 0 18 18"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M17.2031 10.3281L11.5781 15.9531C11.535 15.9961 11.4839 16.0303 11.4276 16.0536C11.3713 16.077 11.3109 16.089 11.25 16.089C11.1891 16.089 11.1287 16.077 11.0724 16.0536C11.0161 16.0303 10.965 15.9961 10.9219 15.9531C10.8788 15.91 10.8446 15.8588 10.8213 15.8025C10.798 15.7462 10.786 15.6859 10.786 15.6249C10.786 15.564 10.798 15.5036 10.8213 15.4473C10.8446 15.391 10.8788 15.3399 10.9219 15.2968L15.7422 10.4687H3.125C3.00068 10.4687 2.88145 10.4193 2.79354 10.3314C2.70564 10.2435 2.65625 10.1242 2.65625 9.99993C2.65625 9.87561 2.70564 9.75638 2.79354 9.66847C2.88145 9.58056 3.00068 9.53118 3.125 9.53118H15.7422L10.9219 4.70305C10.8349 4.61603 10.786 4.498 10.786 4.37493C10.786 4.25186 10.8349 4.13383 10.9219 4.0468C11.0089 3.95978 11.1269 3.91089 11.25 3.91089C11.3731 3.91089 11.4911 3.95978 11.5781 4.0468L17.2031 9.6718C17.2476 9.71412 17.2829 9.76503 17.3071 9.82143C17.3313 9.87784 17.3438 9.93856 17.3438 9.99993C17.3438 10.0613 17.3313 10.122 17.3071 10.1784C17.2829 10.2348 17.2476 10.2857 17.2031 10.3281Z"
-                                    fill="currentColor"
-                                  ></path></svg
-                              ></a>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="item">
-                    <div class="img">
-                        <img src="{% static 'assets/imgs/blog/7.jpg' %}" alt=""/>
-                    </div>
-                    <div class="box">
-                        <div class="cont">
-                    <span class="date"
-                    ><i class="fas fa-calendar-alt mr-10 main-color"></i> 10 ,
-                      Oct 2023</span
-                    >
-                            <h5>
-                                <a href="blog-details.html">My HomeTown.</a>
-                            </h5>
-                        </div>
-                        <div class="info d-flex align-items-center">
-                            <div>
-                      <span
-                      ><i class="fas fa-comments fz-12 mr-5"></i> 2
-                        Comments</span
-                      >
-                            </div>
-                            <!-- <div class="ml-auto">
-                              <a href="blog-details.html"
-                                >Read More
-                                <svg
-                                  class="ml-5"
-                                  width="18"
-                                  height="18"
-                                  viewBox="0 0 18 18"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M17.2031 10.3281L11.5781 15.9531C11.535 15.9961 11.4839 16.0303 11.4276 16.0536C11.3713 16.077 11.3109 16.089 11.25 16.089C11.1891 16.089 11.1287 16.077 11.0724 16.0536C11.0161 16.0303 10.965 15.9961 10.9219 15.9531C10.8788 15.91 10.8446 15.8588 10.8213 15.8025C10.798 15.7462 10.786 15.6859 10.786 15.6249C10.786 15.564 10.798 15.5036 10.8213 15.4473C10.8446 15.391 10.8788 15.3399 10.9219 15.2968L15.7422 10.4687H3.125C3.00068 10.4687 2.88145 10.4193 2.79354 10.3314C2.70564 10.2435 2.65625 10.1242 2.65625 9.99993C2.65625 9.87561 2.70564 9.75638 2.79354 9.66847C2.88145 9.58056 3.00068 9.53118 3.125 9.53118H15.7422L10.9219 4.70305C10.8349 4.61603 10.786 4.498 10.786 4.37493C10.786 4.25186 10.8349 4.13383 10.9219 4.0468C11.0089 3.95978 11.1269 3.91089 11.25 3.91089C11.3731 3.91089 11.4911 3.95978 11.5781 4.0468L17.2031 9.6718C17.2476 9.71412 17.2829 9.76503 17.3071 9.82143C17.3313 9.87784 17.3438 9.93856 17.3438 9.99993C17.3438 10.0613 17.3313 10.122 17.3071 10.1784C17.2829 10.2348 17.2476 10.2857 17.2031 10.3281Z"
-                                    fill="currentColor"
-                                  ></path></svg
-                              ></a>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
     </div>
 
