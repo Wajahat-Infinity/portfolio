@@ -25,3 +25,28 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Images(models.Model):
+    homeImage = models.ImageField(upload_to='images/website',null=True, blank=True)
+
+    def __str__(self):
+        return f' Id {self.id}'
+
+
+class WebsiteContent(models.Model):
+    user_name = models.CharField(max_length=50)
+    home_title = models.CharField(max_length=100)
+    years_exp = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.user_name
+
+
+class Services(models.Model):
+    title = models.CharField(max_length=50)
+    icon = models.ImageField(upload_to='images/serviceIcon',null=True, blank=True)
+    description = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title

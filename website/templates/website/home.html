@@ -14,7 +14,7 @@ Home
             <div class="cont valign">
                 <div class="full-width">
                     <div class="img">
-                        <img src="{% static 'assets/imgs/header/profile1.jpg' %}" alt=""/>
+                        <img src="{{ image.homeImage.url }}" alt="Add your Pic"/>
                         <span class="icon">
                     <img src="{% static 'assets/imgs/header/icon1.png' %}" alt=""/>
                   </span>
@@ -26,7 +26,7 @@ Home
                   </span>
                     </div>
                     <div class="info text-center mt-30">
-                        <h5>Ahmed Ali</h5>
+                        <h5>{{ content.user_name }}</h5>
                         <p class="fz-13 text-u">Available For Freelance</p>
                     </div>
                     <div class="social text-center mt-20">
@@ -40,15 +40,13 @@ Home
         </div>
         <div class="col-lg-8 content main-bg">
             <h1>
-                Hello, I’m <span class="main-color">Ahmed Ali</span>, Graphic
-                Designer ,Front-end Developer and
-                <span class="bord">Video Editor <i></i></span> Based in Findland.
+                {{ content.home_title}}
             </h1>
             <div class="stauts mt-80">
                 <div class="d-flex align-items-center">
                     <div class="mr-40">
                         <div class="d-flex align-items-center">
-                            <h2>4</h2>
+                            <h2>{{ content.years_exp}}  </h2>
                             <p>
                                 Years <br/>
                                 of Experance
@@ -134,46 +132,28 @@ Home
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+
+            {% if services %}
+
+            {% for service in services %}
+            <div class="col-md-4 text-center">
                 <div class="item mb-40">
                 <span class="icon-img-70 mb-30 opacity-7">
-                  <img src="{% static 'assets/imgs/serv-img/1.png' %}" alt=""/>
+                  <img src="{{ service.icon.url}}" alt=""/>
                 </span>
-                    <h6 class="text-u ls1 mb-15">UI / UX Design</h6>
-                    <p>yaha pe kuch likna ha abi</p>
+                    <h6 class="text-u ls1 mb-15">{{service.title}}</h6>
+                    <p>{{ service.description }}</p>
                     <div class="bord-color"></div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="item mb-40">
-                <span class="icon-img-70 mb-30 opacity-7">
-                  <img src="{% static 'assets/imgs/serv-img/2.png' %}" alt=""/>
-                </span>
-                    <h6 class="text-u ls1 mb-15">Web Development</h6>
-                    <p>yaha pe kuch likna ha abi</p>
-                    <div class="bord-color"></div>
-                </div>
+            {% endfor %}
+
+            {% else %}
+            <div class="col-lg-12 text-center">
+            <h5 class="alert alert-danger">NO SERVICES AVAILABLE</h5>
             </div>
-            <div class="col-md-6">
-                <div class="item sm-mb40">
-                <span class="icon-img-70 mb-30 opacity-7">
-                  <img src="{% static 'assets/imgs/serv-img/3.png' %}" alt=""/>
-                </span>
-                    <h6 class="text-u ls1 mb-15">SEO / Marketing</h6>
-                    <p>yaha pe kuch likna ha abi</p>
-                    <div class="bord-color"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="item">
-                <span class="icon-img-70 mb-30 opacity-7">
-                  <img src="{% static 'assets/imgs/serv-img/4.png' %}" alt=""/>
-                </span>
-                    <h6 class="text-u ls1 mb-15">Technology Solution</h6>
-                    <p>yaha pe kuch likna ha abi</p>
-                    <div class="bord-color"></div>
-                </div>
-            </div>
+            {% endif %}
+
         </div>
     </div>
 
