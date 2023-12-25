@@ -10,7 +10,7 @@ class Home(TemplateView):
         context = super().get_context_data()
         context['projects'] = Project.objects.all()
         context['blogs'] = Blog.objects.all()
-        context['image'] = Images.objects.get(id=1)
+        context['image'] = Images.objects.order_by('-id').first()
         context['content'] = WebsiteContent.objects.get(id=1)
         context['services'] = Services.objects.all()
 
