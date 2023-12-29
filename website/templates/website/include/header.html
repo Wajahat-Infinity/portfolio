@@ -1,34 +1,35 @@
 {% load static %}
 
 <div class="nav-top pt-30 pb-30">
-      <div class="container">
+    <div class="container">
         <div class="row">
-          <div class="col-md-4 valign">
-            <a href="#0" class="logo icon-img-60">
-              <!-- <img src="assets/imgs/logo-light.png" alt="" /> -->
-              <h1>Digital_Guru</h1>
-            </a>
-          </div>
-          <div class="col-md-4 valign">
-            <div class="social text-center full-width">
-              <a href="#0"><i class="fab fa-facebook"></i></a>
-              <a href="#0"><i class="fab fa-twitter"></i></a>
-              <a href="#0"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#0"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="col-md-4 valign">
-            <div class="full-width info">
-              <div class="d-flex justify-content-end">
-                <a href="mailto:abc@example.com">
-                  <span class="sub-title fz-12">Digital_Guru@website.com</span>
+            <div class="col-md-4 valign">
+                <a href="#0" class="logo icon-img-60">
+                    <!-- <img src="assets/imgs/logo-light.png" alt="" /> -->
+                    <h1>Digital_Guru</h1>
                 </a>
-              </div>
             </div>
-          </div>
+            <div class="col-md-4 valign">
+                <div class="social text-center full-width">
+                    <a href="{% if facebook %}{{facebook}}{% else %}#{% endif %}"><i class="fab fa-facebook"></i></a>
+                    <a href="{% if twitter %}{{twitter}}{% else %}#{% endif %}"><i class="fab fa-twitter"></i></a>
+                    <a href="{% if instagram %}{{instagram}}{% else %}#{% endif %}"><i class="fab fa-instagram"></i></a>
+                    <a href="{% if linkedin %}{{linkedin}}{% else %}#{% endif %}"><i class="fab fa-linkedin-in"></i></a>
+
+                </div>
+            </div>
+            <div class="col-md-4 valign">
+                <div class="full-width info">
+                    <div class="d-flex justify-content-end">
+                        <a href="mailto:abc@example.com">
+                            <span class="sub-title fz-12">Digital_Guru@website.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="nav-butn">
-          <span class="pe-7s-menu"></span>
+            <span class="pe-7s-menu"></span>
         </div>
-      </div>
     </div>
+</div>

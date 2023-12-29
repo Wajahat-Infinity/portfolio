@@ -50,3 +50,14 @@ class Services(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class SocialLinks(models.Model):
+    facebook = models.CharField(max_length=100)
+    twitter = models.CharField(max_length=100)
+    instagram = models.CharField(max_length=100)
+    linkedin = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.id
+
