@@ -18,7 +18,7 @@ class Home(TemplateView):
         context['projects'] = Project.objects.all()
         context['blogs'] = Blog.objects.all()
         context['image'] = Images.objects.order_by('-id').first()
-        context['content'] = WebsiteContent.objects.get(id=1)
+        context['content'] = WebsiteContent.objects.order_by('-id').first()
         context['services'] = Services.objects.all()
 
 
