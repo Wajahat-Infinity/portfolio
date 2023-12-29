@@ -59,5 +59,5 @@ class SocialLinks(models.Model):
     linkedin = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.id
+        return f' Id {self.id}'
 
