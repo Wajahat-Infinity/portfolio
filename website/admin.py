@@ -1,4 +1,4 @@
-from website.models import Project, Blog, Images, WebsiteContent, Services
+from website.models import Project, Blog, Images, WebsiteContent, Services, SocialLinks
 from django.contrib import admin
 
 
@@ -25,4 +25,10 @@ class WebsiteContentAdmin(admin.ModelAdmin):
 @admin.register(Services)
 class ServicesAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'icon', 'description')
+
+
+@admin.register(SocialLinks)
+class SocialLinksAdmin(admin.ModelAdmin):
+    list_display = ('id', 'facebook', 'twitter', 'instagram', 'linkedin')
+
 
