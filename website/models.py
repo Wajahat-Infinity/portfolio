@@ -28,7 +28,7 @@ class Project(models.Model):
 
 
 class Images(models.Model):
-    homeImage = models.ImageField(upload_to='images/website',null=True, blank=True)
+    homeImage = models.ImageField(upload_to='images/website', null=True, blank=True)
 
     def __str__(self):
         return f' Id {self.id}'
@@ -39,13 +39,14 @@ class WebsiteContent(models.Model):
     home_title = models.CharField(max_length=100)
     years_exp = models.CharField(max_length=20)
 
+
     def __str__(self):
         return self.user_name
 
 
 class Services(models.Model):
     title = models.CharField(max_length=50)
-    icon = models.ImageField(upload_to='images/serviceIcon',null=True, blank=True)
+    icon = models.ImageField(upload_to='images/serviceIcon', null=True, blank=True)
     description = models.CharField(max_length=100)
 
     def __str__(self):
@@ -53,11 +54,12 @@ class Services(models.Model):
 
 
 class SocialLinks(models.Model):
-    facebook = models.CharField(max_length=100)
-    twitter = models.CharField(max_length=100)
-    instagram = models.CharField(max_length=100)
-    linkedin = models.CharField(max_length=100)
+    facebook = models.CharField(max_length=100, null=True, blank=True)
+    twitter = models.CharField(max_length=100, null=True, blank=True)
+    instagram = models.CharField(max_length=100, null=True, blank=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=True)
+    youtube = models.CharField(max_length=100, null=True, blank=True)
+    tiktok = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return f' Id {self.id}'
-

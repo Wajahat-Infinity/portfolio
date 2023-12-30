@@ -15,6 +15,8 @@ class Home(TemplateView):
         context['twitter'] = latest_social_links.twitter if latest_social_links else None
         context['instagram'] = latest_social_links.instagram if latest_social_links else None
         context['linkedin'] = latest_social_links.linkedin if latest_social_links else None
+        context['youtube'] = latest_social_links.youtube if latest_social_links else None
+        context['tiktok'] = latest_social_links.tiktok if latest_social_links else None
         context['projects'] = Project.objects.all()
         context['blogs'] = Blog.objects.all()
         context['image'] = Images.objects.order_by('-id').first()
