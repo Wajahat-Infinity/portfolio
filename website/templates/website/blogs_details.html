@@ -11,14 +11,10 @@ Blog Details
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="caption text-center">
-                <div class="gat">
-                    <a href="#0"><span>Web Design</span></a>
-                    <a href="#0"><span>Envato</span></a>
-                </div>
                 <h1 class="fz-55 mt-30">
-                    Network of wormholes colonies extraordinary claims require.
+                    {{ object.title }}
                 </h1>
-                <p class="sub-title mt-15">6 , August 2022 - By Admin</p>
+                <p class="sub-title mt-15">{{ object.created_at }}</p>
             </div>
             <div class="main-img mb-80 mt-40">
                 <img src="{{object.image.url}}" alt="" class="radius-5"/>
@@ -29,32 +25,8 @@ Blog Details
         <div class="col-lg-9">
             <div class="cont">
                 <div class="text mb-20">
-                    <div class="d-flex align-items-center mb-20">
-                  <span class="fz-60 fw-500 main-color line-height-1 mr-10"
-                  >A</span
-                  >
-                        <p>
-                            new report said earlier this week that Apple is working on a
-                            brand new laptop. A trusted Apple insider with a proven
-                            track record confirmed that Apple is working on the larger
-                            MacBook Air.
-                        </p>
-                    </div>
-                    <p>
-                        new report said earlier this week that Apple is working on a
-                        brand new laptop. Apple plans to release a 15-inch MacBook Air
-                        in 2023, a first for the Air series. A trusted Apple insider
-                        with a proven track record confirmed that Apple is working on
-                        the larger MacBook Air.
-                    </p>
-                </div>
-                <div class="text">
-                    <p>
-                        However, Apple might not include it in the Air series when it
-                        launches it. As for the notebook’s release date, the 15-inch
-                        MacBook isn’t coming soon. It’ll get a late 2023 release at
-                        best, according to the new claims.
-                    </p>
+                    <h3>Description</h3>
+                    <p>{{ object.content }}</p>
                 </div>
 
             </div>

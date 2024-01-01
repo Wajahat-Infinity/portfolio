@@ -63,3 +63,11 @@ class SocialLinks(models.Model):
 
     def __str__(self):
         return f' Id {self.id}'
+
+
+class Skills(models.Model):
+    skill_name = models.CharField(max_length=50)
+    icon = models.ImageField(upload_to='images/SkillsIcon', null=True, blank=True)
+
+    def __str__(self):
+        return self.skill_name

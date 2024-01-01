@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView, DetailView
 
-from website.models import Project, Blog, Images, WebsiteContent, Services, SocialLinks
+from website.models import Project, Blog, Images, WebsiteContent, Services, SocialLinks, Skills
 
 
 class Home(TemplateView):
@@ -22,6 +22,7 @@ class Home(TemplateView):
         context['image'] = Images.objects.order_by('-id').first()
         context['content'] = WebsiteContent.objects.order_by('-id').first()
         context['services'] = Services.objects.all()
+        context['skills'] = Skills.objects.all()
 
 
         return context
