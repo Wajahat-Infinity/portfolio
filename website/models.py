@@ -1,9 +1,10 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = HTMLField()
     image = models.ImageField(upload_to='images', null=True, blank=True, help_text='Images for Testing')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -15,7 +16,7 @@ class Blog(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to='images', null=True, blank=True, help_text='Images for Testing')
-    description = models.CharField(max_length=500)
+    description = HTMLField()
     detail_description = models.CharField(max_length=500)
     client = models.CharField(max_length=50)
     date = models.DateField(null=True)
@@ -36,7 +37,7 @@ class Images(models.Model):
 
 class WebsiteContent(models.Model):
     user_name = models.CharField(max_length=50)
-    home_title = models.CharField(max_length=100)
+    home_title = HTMLField()
     years_exp = models.CharField(max_length=20)
 
 
@@ -47,7 +48,7 @@ class WebsiteContent(models.Model):
 class Services(models.Model):
     title = models.CharField(max_length=50)
     icon = models.ImageField(upload_to='images/serviceIcon', null=True, blank=True)
-    description = models.CharField(max_length=100)
+    description = HTMLField()
 
     def __str__(self):
         return self.title
